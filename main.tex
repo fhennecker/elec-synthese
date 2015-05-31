@@ -27,7 +27,9 @@
 
 \section{Vademecum d'électricité (chapitre 2)}
 
-    \paragraph{Schémas}
+    \subsection{Notions fondamentales}
+
+    \subsubsection{Schémas}
     \begin{itemize}
         \item La \textit{charge} d'un montage est l'équipement/composant en aval d'un montage
         \item La \textit{source} d'un montage est l'équipement/composant en amont d'un montage
@@ -35,9 +37,144 @@
         \item Deux composants sont connectés en \textit{parallèle} s'ils sont soumis à la même ddp
     \end{itemize}
 
-    \paragraph{Courants et tensions}
-    \begin{itemize}
-        \item L'\textit{intensité} est le "débit" de charge électrique : $i() = \frac{dq(t)}{dt}$
-    \end{itemize}
+    \subsubsection{Courants et tensions}
+
+    \paragraph{Intensité} L'\textit{intensité} ou le \textit{courant} 
+    est le "débit" de charge électrique : $i() = \frac{dq(t)}{dt}$ en ampères. 
+    (\textcolor{red}{[A] = [C/s]}) Elle se mesure avec un ampèremètre en série.
+    Ses valeurs courantes vont de $10\mu$A à 100mA.\\
+
+    Sur un schéma, les flèches représentent le \textit{courant conventionnel} formé
+    de charges positives (dans le sens contraire du sens réel des électrons).
+
+    \paragraph{Tension} La \textit{tension} est un terme flou et peut représenter 
+    une force électromotrice, le potentiel d'un noeud ou la ddp aux bornes d'un dipôle.
+    Elle se mesure en \textcolor{red}{[V] = [J/C]}) et oscillera dans ce cours entre 
+    100$\mu$V à 100V.
+
+    \paragraph{Potentiel} Le \textit{potentiel électrique} en un point vaut l'énergie
+    à dépenser pour amener en ce point une charge électrique unitaire (1C) depuis
+    un point où, par convention, ce potentiel vaut 0V.
+
+    \paragraph{Masse} La masse est, par convention, le noeud qui vaut 0V. Attention, 
+    masse $\neq$ terre! 
+
+    \paragraph{Force électromotrice} La ddp d'une source idéale est appelée \textit{force électromotrice} (fig \ref{fig:fem})
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_fem.png}
+            \caption{Une force électromotrice}
+            \label{fig:fem}
+        \end{center}
+    \end{figure}
+
+    Convention de représentation de la ddp : la flèche de tension pointe vers le
+    potentiel le plus positif.
+
+    \paragraph{Charge} La charge se mesure en \textcolor{red}{[C]}). Un électron
+    porte une charge élémentaire négative notée $e$, qui vaut environ $-1,6.10^{-19}$C.
+
+    \paragraph{Puissance} La puissance se mesure en \textcolor{red}{[W]}) et
+    oscillera dans ce cours entre 10$\mu$W et 10W.
+
+    \subsubsection{Energie et puissance}
+    Formule de la puissance instantanée : $$ p(t) = v(t).i(t) $$
+
+    \paragraph{Convention récepteur} Les flèches de courant et de tension sont
+    de sens opposés
+
+    \paragraph{Convention générateur} Les flèches de courant et de tension sont
+    de même sens\\
+
+    Dans les deux cas, $i>0$ et $v>0$.
+
+    \subsubsection{Etat électrique, loi et caractéristique d'un dipôle}
+    L'\textit{état électrique} d'un dipôle est le couple (I,V) de valeurs de
+    courant et de tension qui s'appliquent à ce dipôle à un moment donné.
+
+    \paragraph{Loi d'Ohm} $V = R.I$ (aussi appelée loi fondamentale d'un dipôle)
+
+    \paragraph{Caractéristique} La \textit{caractéristique d'un dipôle} est le
+    graphe représentant sa loi fondamentale dans le plan (I,V). Le point de fonctionnement
+    du dipôle ne peut voyager que sur la caractéristique. \\
+    \textbf{Exemple} : la caractéristique d'une source de tension idéale est une
+    droite verticale (V constant).
+
+    \paragraph{Résolution} On peut résoudre le circuit soit analytiquement, soit
+    graphiquement (intersection des caractéristiques).
+
+    \subsubsection{Principaux dipôles idéaux}
+    \paragraph{Résistance} La résistance transforme la puissance électrique reçue
+    en énergie thermique. Son unité est l'ohm \textcolor{red}{[$\Omega$]}, et
+    oscillera dans ce cours entre $10\Omega$ et $10M\Omega$
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_resistance.png}
+            \caption{Dipôle résistance}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Source de tension} Ce dipôle fixe la tension.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_sourcetension.png}
+            \caption{Source de tension}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Source de courant} Ce dipôle fixe le courant.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_sourcecourant.png}
+            \caption{Source de courant}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Court-circuit} Dipôle dans lequel la tension est nulle.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_courtcircuit.png}
+            \caption{Court-circuit}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Circuit ouvert} Dipôle dans lequel le courant est nul.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_circuitouvert.png}
+            \caption{Circuit ouvert}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Capacité} Sa caractéristique n'est pas représentable sur (I,V) car
+    elle fait intervenir la notion de temps. Une capacité s'exprime en farads
+    \textcolor{red}{[F]} et oscillera entre 10pF et 1mF.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_capacite.png}
+            \caption{Capacité}
+        \end{center}
+    \end{figure}
+
+    \paragraph{Inductance} Sa caractéristique n'est pas représentable sur (I,V) non plus.
+    Les self-inductances sont exprimées en henris \textcolor{red}{[H]} et oscillent
+    entre 10nH et 100mH.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/2_inductance.png}
+            \caption{Capacité}
+        \end{center}
+    \end{figure}
+
+    La capacité et l'inductance ont un statut particulier : elles ne dissipent
+    pas de puissance mais sont capables d'emmagasiner de l'énergie et de la 
+    restituer ensuite. Ces dipôles sont \textit{réactifs}.\\
+
+    \'A un instant donné, l'énergie accumulée par ces composants vaut : 
+    $E = \frac{C.V^2}{2}$ ou $E = \frac{L.I^2}{2}$\\
+
+    \paragraph{Linéarité} On dit qu'un dipôle est \textit{linéaire} si sa caractéristique est une droite.
+
 
 \end{document}
