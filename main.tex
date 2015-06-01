@@ -1285,4 +1285,39 @@ Bruno \bsc{Rocha Pereira} - Pierre \bsc{Gérard}}
         \end{center}
     \end{figure}
 
+\section{Electronique numérique (Chapitre 11)}
+    En électronique analogique, l'information est représentée directement sous forme de signal car les deux sont analogiques
+    En électronique numérique, la tension est regardée comme une grandeur logique pour coder des bits.
+    Avantages
+    \begin{itemize}
+        \item L'information ne se dégrade pas (ou peut être restaurée)
+        \item On peut traiter l'information de manière très complexe car le signal n'est pas dégradé
+        \item On peut programmer, c'est-à-dire modifier ce qu'un circuit fait après sa fabrication
+    \end{itemize}
+    Il existe trois types de grandeurs
+    \begin{itemize}
+        \item Analogique : infinité de niveaux, continu
+        \item Numérique : $n$ niveaux ou \textit{états}, discret
+        \item Logique : 2 niveaux ou \textit{états}, discret, cas particulier du numérique
+    \end{itemize}
+    Un bit est tout à la fois un chiffre et une grandeur logique donc peut être utilisé dans ces deux cas, ce qui lui confère des propriétés intéressantes.
+    \begin{itemize}
+        \item n bits -> $ 2^{n} $ états
+        \item octet -> 8 bits
+        \item Un chronogramme représente la valeur d'un ou plusieurs bits en fonction du temps.
+    \end{itemize}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/11_chronogramme.png}
+            \caption{Chronogramme}
+            \label{fig:5_octocoupleur}
+        \end{center}
+    \end{figure}
+    Principe
+    \begin{itemize}
+        \item Représenter l'information sous forme de bit(s) : bits + code indiquant leur représentation
+        \item Représenter les bits sous forme de signaux électriques : 5V/0V, 5V/-5V, 3V/-3V, 1A/0A...
+        \item Transmission en parallère : rapide mais beaucoup de fils (N+1)
+        \item Transmission en série : plus lent mais seulement 2 fils
+    \end{itemize}
 \end{document}
