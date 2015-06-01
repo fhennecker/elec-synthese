@@ -9,7 +9,6 @@
 \usepackage{amssymb}
 \usepackage{upgreek}
 \usepackage{color}
-\usepackage[]{algorithm2e}
 \usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage{float}
@@ -18,7 +17,7 @@
     ELEC-H-201 - Electronique\\
     \small Synthèse 2014-2015
 }
-\author{Florentin \bsc{Hennecker}}
+\author{Florentin \bsc{Hennecker} Pierre \bsc{Gérard}}
 \date{}
 
 \begin{document}
@@ -276,7 +275,7 @@
         \end{center}
     \end{figure}
 
-    \paragraph{Equivalences} On peut facilement ptasser de l'un à l'autre :
+    \paragraph{Equivalences} On peut facilement passer de l'un à l'autre :
     \begin{align*}
         \begin{cases}
             R_{TH}&= R_N\\
@@ -836,5 +835,96 @@
 
     On peut aussi, plus simplement, utiliser une source de courant. Dans ce cas, 
     la diode fixe la ddp et la source fixe l'intensité du courant.
+
+    \subsection{Principaux circuits à diodes}
+    Dans les circuits suivants, on considère qu'on utilise des diodes idéales.
+
+    \subsubsection{Redresseur simple alternance}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_redresseursa.png}
+            \caption{Redresseur simple alternance}
+            \label{fig:5_redresseursa}
+        \end{center}
+    \end{figure}
+    Ce circuit est appelé redresseur car une tension alternative (E) est transformée
+    en tension uniquement positive($V_{out}$).\\
+
+    Cette fonction de redressement est une des fonctions fondamentales de l'électronique.
+    Elle est notamment utilisée :
+    \begin{itemize}
+        \item pour démoduler des signaux radios (en modulation AM)
+        \item dans les alimentations pour transformer une tension alternative en
+        tension continue.
+    \end{itemize}
+
+    Le redressement est indispensable dans les alimentations AC/DC. La fig \ref{fig:5_redressementalim} 
+    montre les différentes étapes qu'une alimentation effectue pour assurer un 
+    courant continu de 5V aux composants en aval. Ce principe n'est par contre
+    plus très utilisé, on utilise maintenant plutôt des alimentations "à découpage", 
+    vues plus tard.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_redressementalim.png}
+            \caption{Exemple de fonctionnement d'une alimentation AC/DC}
+            \label{fig:5_redressementalim}
+        \end{center}
+    \end{figure}
+
+    \subsubsection{Sélecteur de maximum}
+    La figure suivante est un sélecteur de maximum :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{fig/5_maxselector.png}
+            \caption{Schéma d'un sélecteur de maximum}
+            \label{fig:5_maxselector}
+        \end{center}
+    \end{figure}
+
+    Faisons l'hypothèse que E1 > E2 > 0.
+    Il y a quatre possibilités de résolutions pour le schéma ci-dessus.
+
+    \begin{itemize}
+        \item Supposons que D1 est \textbf{passante}. Dans ce cas, $V_K$ = E1-0,6V
+        \begin{itemize}
+            \item Supposons que D2 est \textbf{passante} aussi. Dans ce cas, $V_K$ devrait
+            valoir E2-0,6V, ce qui est impossible. cette situation est donc impossible.
+            \item Supposons que D2 est \textbf{bloquante}. Dans ce cas, on peut
+            rempacer D2 par un circuit ouvert, ce qui coupe E2 du circuit. On 
+            retombe dans le circuit simple redresseur.
+        \end{itemize}
+        \item Supposons que D1 est \textbf{bloquante}.
+        \begin{itemize}
+            \item Supposons que D2 est \textbf{passante}: $V_K$ = E2-$V_{TH}$. 
+            D2 peut être passante, par contre la ddp sur D1 vaut 10V-(6V-0,06V) = 3,4V,
+            ce qui contredit l'hypothèse D1 bloquante.
+            \item, Si D2 est \textbf{bloquante}, on en arrive à la même situation
+            que supra.
+        \end{itemize}
+    \end{itemize}
+    En conclusion, on peut alculer que $V_{out}$ réplique la plus grande des deux
+    tensions. Ce circuit est un sélecteur de maximum.\\
+
+    NB. si E1 et E2 sont négatives, la masse est la plus grande des tensions, 
+    $V_{out}$ vaut 0V.
+
+    \subsubsection{Redresseur double alternance}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_redresseurda.png}
+            \caption{Redresseur double alternance}
+            \label{fig:5_redresseurda}
+        \end{center}
+    \end{figure}
+    C'est en fait un sélecteur de maximum alimenté par deux sources opposées.
+
+    \subsubsection{Redresseur double alternance (2) : pont à 4 diodes}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_redresseurdapont.png}
+            \caption{Redresseur double alternance (2) : pont à 4 diodes}
+            \label{fig:5_redresseurdapont}
+        \end{center}
+    \end{figure}
 
 \end{document}
