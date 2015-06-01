@@ -405,8 +405,76 @@
     \end{figure}
 
     \subsection{Composants réactifs}
+        \begin{itemize}
+            \item Les dipôles réactifs sont les capacités et inductances.
+            \item Ne consomment pas de puissance
+            \item Sont duals l'un de l'autre
+            \item Deux aspects : temporel et fréquentiel
+        \end{itemize}
+        \subsubsection{Circuit RC en temporel}
+            Lois fondamentales
+            \begin{itemize}
+                \item La DDP régit la charge/décharge
+                \item Loi HF : la DDP ne varie pas instantanément
+                \item Loi BF : $ t>> \rightarrow i = 0 $
+            \end{itemize}
 
-    gné?
+            En résolvant un circuit RC
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_rc_temp2.png}
+                    \caption{Circuit RC}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            On obtient la résolution analytique : 
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_rc_temp.png}
+                    \caption{Résolution analytique du circuit RC}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            Compliqué et long mais on peut simplifier en utilisant les lois fondamentales :  
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_rc_temp3.png}
+                    \caption{Résolution intuitive du circuit RC}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{itemize}
+                \item La constante de temps de la charge/décharge de la capacité : $ \tau=R*C$
+                \item 63\% après $ \tau $
+                \item 95\% après $ 3*\tau $
+                \item 99\% après $ 5*\tau $
+                \item $ V_{C}(t) $ est un filtre passe-bas de $ e(t) $
+                \item $ V_{R}(t) $ est un filtre passe-haut de $ e(t) $
+                \item La fréquence de coupure : $ f_{0} = \frac{1}{2\pi\tau} $
+                \item La pulsation de coupure : $ \omega_{0} = \frac{1}{\tau} $
+            \end{itemize}
+        \subsubsection{Circuit RL en temporel}
+            Magnétisation : augmentation du courant. \\
+            Démagnétisation : diminution du courant. \\
+            Lois fondamentales
+            \begin{itemize}
+                \item Loi HF : le courant ne varie pas instantanément
+                \item Loi BF : $ t>> \rightarrow v = 0 $
+            \end{itemize}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_rl_temp.png}
+                    \caption{Résolution intuitive du circuit RL}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{itemize}
+                \item $ \tau = \frac{L}{R} $
+                \item $ V_{L}(t) est un filtre passe-haut de e(t) $
+                \item $ V_{R}(t) est un filtre passe-bas de e(t) $
+                \item La fréquence et la pulsation de coupure sont les mêmes que RC
+            \end{itemize}
+
 
 \section{Amplificateurs opérationnels (Chapitre 4)}
     \subsection{Pourquoi amplifier}
