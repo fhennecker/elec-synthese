@@ -927,4 +927,70 @@
         \end{center}
     \end{figure}
 
+    % TODO explication à écrire
+    Explication à écrire. Je pense comprendre que D est à la masse mais pas sûr.
+
+    \subsubsection{Limiteur de tension (écrêteur)}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_ecreteur.png}
+            \caption{\'Ecrêteur}
+            \label{fig:5_ecreteur}
+        \end{center}
+    \end{figure}
+    En raisonnant par hypothèses, on voit que la tension à l'entrée de la diode
+    ne peut dépasser $V_{TH}$. 
+
+    \subsubsection{\'Ecrêteur polarisé}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_ecreteurpolarise.png}
+            \caption{\'Ecrêteur polarisé}
+            \label{fig:5_ecreteurpolarise}
+        \end{center}
+    \end{figure}
+    Dans le montage précédent, la tension maximale est forcément $V_{TH}$. Ici,
+    on rajoute une source de tension continue en série avec la diode. 
+    La valeur à laquelle a lieu l'écrêtage n'est plus $V_{TH}$ mais $V_{TH} + E_p$\\
+
+    Remarque : on retrouve ici la notion de polarisation qui consiste à ajuster
+    le point de fonctionnement du montage au moyen d'une source continue. 
+
+    \subsubsection{Détecteur de crêtes}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_detecteurcretes.png}
+            \caption{Détecteur de crêtes}
+            \label{fig:5_detecteurcretes}
+        \end{center}
+    \end{figure}
+    Ce circuit peut être vu comme une variante du redresseur simple alternance 
+    où on place une capacité en parallèle sur la résistance de charge. Le circuit
+    doit être dimensionné de telle sorte que la constante de temps du RC de sortie
+    soit beaucoup plus grande que la période ou la durée d'une impulsion du signal d'entrée.
+    \begin{itemize}
+        \item \textbf{phase a :} la diode devient passante et le condensateur
+        se charge à travers celle-ci
+        \item \textbf{phase b :} la capa se décharge par la résistance (puisque
+        la diode ne laissera pas passer le courant)
+    \end{itemize}
+    Note : le détecteur de crête sert notamment à 
+    \begin{itemize}
+        \item mesurer la valeur de crête d'un signal sans être synchronisé sur celui-ci
+        \item détecter des impulsions très courte (capa = mémoire)
+        \item la démodulatoin d'une porteuse modulée en amplitude (radio AM); on 
+        choisit la constante de temps RC grande devant la période de porteuse, mais
+        faible devant celle de la modulante. (fig \ref{fig:5_demod})
+    \end{itemize}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_demod.png}
+            \caption{\'Ecrêteur}
+            \label{fig:5_demod}
+        \end{center}
+    \end{figure}
+
+    La sinusoïde ne fait que transporter l'information, son enveloppe est la
+    réelle information.
 \end{document}
