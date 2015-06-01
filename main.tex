@@ -572,6 +572,69 @@
                 \end{center}
             \end{figure}
 
+    \subsection{Réponse en fréquence}
+        La \textbf{réponse en fréquence} (ou \textbf{transmittance isochrone}) est le rapport du signal de sortie sur le signal d'entrée en phaseurs.
+        \begin{itemize}
+            \item Représente la transformation réalisée par le circuit sur le signal d'entrée
+            \item Généralisation du gain
+            \item Sous hypothèse de circuits linéaires en régime sinusoïdal
+            \item Gain et déphasage introduits par le circuit en fonction de la fréquence : $ H(j\omega) = A(\omega)e^{j\varphi(\omega)} $
+            \item Par exemple sur un ampli audio, l'équalizer montre la réponse en fréquence
+        \end{itemize}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{fig/2_reponse.png}
+                \caption{Réponse en fréquence}
+                \label{fig:2_superposition}
+            \end{center}
+        \end{figure}
+        \subsubsection{Courbes de Bode}
+            \begin{itemize}
+                \item Représente graphiquement la réponse en fréquence
+                \item Gain : graphe bilogarithmique : $ log[A(\omega)] = fct(log \omega) $
+                \item Phase : graphe semi-logarithmique : $ \varphi(\omega) = fct(log \omega) $
+                \item Deux problématiques : analyse (représenter les courbes de Bode du circuit) et synthèse (trouver le circuit à partir des courbes de Bode)
+            \end{itemize}
+            Définitions
+            \begin{itemize}
+                \item décade = x10
+                \item octave = x2
+                \item décibels : unité adimensionnelle pour exprimer un rapport
+                \item rapport de tension ou courant : $ X[db] = 20logX $
+                \item rapport de tension ou courant : $ X[db] = 10logX $
+            \end{itemize}
+            Exemple
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_courbesbode.png}
+                    \caption{Courbes de Bode}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            Réponses en fréquence du RC et du RL
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse2.png}
+                    \caption{Réponses en fréquence du RC et du RL}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            Exemple : circuit RC
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse_RC1.png}
+                    \caption{Courbes de Bode d'un filtre passe-haut}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse_RC2.png}
+                    \caption{Courbes de Bode d'un filtre passe-bas}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
 
 
 
