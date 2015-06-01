@@ -189,5 +189,61 @@
     $Q=C*V$
     $\phi=L*I$
 
+\section{Amplificateurs opérationnels (Chapitre 4)}
+    \subsection{Pourquoi amplifier}
+        \begin{itemize}
+            \item Signaux très faibles
+            \item Régler le niveau logique
+            \item Amplifier en amont d'un CAN/ADC (Convertisseur Analogique/Numérique)
+        \end{itemize}
+
+    \subsection{Propriétés de base}
+        \subsubsection{Définitions}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.6\textwidth]{fig/4_ampliop.png}
+                    \caption{Ampli Op}
+                \end{center}
+            \end{figure}
+            \begin{itemize} 
+            \item C'est un circuit intégré à 8 pattes (deux bornes d'entrée et une borne de sortie). Il est considéré comme un quadripôle.
+            \item L'entrée $-$ est l'entrée \textit{inverseuse}.
+            \item L'entrée $+$ est l'entrée \textit{non-inverseuse}.
+            \item Chacune des entrées et sortie reçoit un signal de tension mesuré par rapport à la masse. Ils sont notés respectivement $ V^{+} $, $ V^{-} $ et $ V_{out} $
+            \item La \textit{tension d'entrée différentielle} est notée $ V_{d} = V^{+} - V^{-} $
+            \item La fonction d'un ampli-op est d'amplifier cette tension
+            \end{itemize}
+        \subsubsection{Loi fondamentale et gain}
+        La \textit{fonction d'amplification} d'un ampli-op est $ V_{out} = A*V_{d} $ \\
+        Le \textit{gain} $A$ d'un ampli op est le facteur d'amplification entrée son entrée différentielle et sa sortie. \\
+        \begin{itemize}
+            \item $A$ est sans dimension.
+            \item $A$ est très élevé (typiquement entre 30000 et 100000). On fait l'hypothèse qu'il est infini.
+            \item $A$ n'a de sens que si la tension d'entrée est très faible.
+            \item Les tensions $V_{d}$ et $V_{out}$ peuvent être aussi bien positives que négatives (par exemple dans le cas d'un courant alternatif)
+        \end{itemize}
+
+        \subsubsection{Bornes d'alimentation}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.6\textwidth]{fig/4_ampliop_alim.png}
+                    \caption{Ampli Op}
+                \end{center}
+            \end{figure}
+            Pour amplifier le signal, l'ampli-op a besoin d'une source d'énergie qui est fournie par des bornes d'alimentation.\\
+            \begin{itemize}
+                \item Elles sont le plus souvent symétriques
+                \item Généralement $-12V$ et $+12V$ ou $-15V$ et $+15V$
+                \item La tension de sortie ne peut pas sortir de la gamme fixée par ces tensions d'alimentation
+            \end{itemize}
+            L'ampli op est donc un composant \textbf{actif} car il ajoute de la puissance dans le circuit.
+    \subsection{Ampli-Op réel : 741}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=0.6\textwidth]{fig/4_ampliop_reel.png}
+                \caption{Ampli Op}
+            \end{center}
+        \end{figure}
+
 
 \end{document}
