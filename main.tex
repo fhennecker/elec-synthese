@@ -993,4 +993,64 @@
 
     La sinusoïde ne fait que transporter l'information, son enveloppe est la
     réelle information.
+
+    \subsection{La diode à jonction PN (réelle)}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_dioderelle.png}
+            \caption{Caractéristique d'une diode à jonction PN réelle}
+            \label{fig:5_dioderelle}
+        \end{center}
+    \end{figure}
+    La caractéristique d'une diode à jonction PN réelle comporte trois zones, qui
+    sont autant de différences par rapport à la diode idéale :
+    \begin{enumerate}
+        \item la transition brusque entre l'état passant et bloquant est remplacée
+        par une courbe qui est en fait très proche d'une exponentielle
+        \item à l'état bloquant, le courant n'est pas nul, il existe dans la diode
+        un très faible courant négatif
+        \item lorsqu'on applique une tension négative très élevée à la diode réelle,
+        il arrive un moment où ce courant négatif augmente brutalement. On dit que
+        la diode "entre en avalanche". Ce seuil est noté $V_{BR}$ (breakdown voltage)
+    \end{enumerate}
+
+    \paragraph{Polarisation directe}
+    Voici la moitié droite de la caractéristique d'une diode réelle :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_dioderpolarisationdirecte.png}
+            \caption{Polarisation directe}
+            \label{fig:5_dioderpolarisationdirecte}
+        \end{center}
+    \end{figure}
+    Ci-dessus, on a la zone de polarisation directe d'une diode réelle. On voit
+    bien que la transition entre les états bloquant et passant est plus estompée.
+    L'état passant n'a donc pas vraiment de limite bien définie mais correspond
+    à la zone où le courant dans la diode est significatif (ici environ entre 0,6V et 
+    1,1V\footnote{au-delà de 1,1V, le courant dans la diode devient très important
+    et la diode peut être détruite}).\\
+
+    Au-delà de $V_{TH}$, une petite variation de la tension $V_{AK}$ provoque une
+    grande variation du courant dans la diode.\\
+
+    \textbf{Remarque :} les circuits de polarisation déjà étudiés restent valables.
+    La seule différence est la légère variation de $V_{AK}$ en fonction du courant.
+
+    \paragraph{Polarisation inverse}
+    Voici la moitié gauche de la caractéristique d'une diode réelle :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_dioderpolarisationinverse.png}
+            \caption{Polarisation directe}
+            \label{fig:5_dioderpolarisationinverse}
+        \end{center}
+    \end{figure}
+    On note que le courant est effectivement très petit mais dépend de la température.\\
+
+    Lors de l'\textit{avalanche}, la puissance dissipée sous forme de chaleur
+    dans la diode devient importante puisque le courant et la tension prennent
+    simultanément des valeurs élevées. C'est une situation clairement à éviter.\\
+
+    Il faut donc maintenant faire attention dans nos montages à ce que les valeurs
+    les plus négatives ne dépassent pas $V_{BR}$!
 \end{document}
