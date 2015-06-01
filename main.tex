@@ -637,6 +637,67 @@
     On ne peut donc \textbf{pas appliquer le principe de superposition!}
 
     \subsection{Résoudre un circuit à diode}
+    Tentons de résoudre le circuit suivant :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{fig/5_circuitdiode.png}
+            \caption{Un circuit avec une diode}
+            \label{fig:5_circuitdiode}
+        \end{center}
+    \end{figure}
+    Il y a 3 inconnues : $V_{AK}, V_R$ et $I_A$. Il faut donc 3 équations :
+    \begin{itemize}
+        \item $E = V_{AK}+V_R$ (loi des mailles)
+        \item $V_R = R.I_A$
+        \item la troisième relation devrait être la loi de la diode. Or il y en a 
+        deux suivant que la diode est passante ou bloquante. Pour savoir laquelle
+        prendre, il faut connaître l'état du circuit, mais pour connaître l'état
+        du circuit, il faut connaître l'état de la diode...
+    \end{itemize}
+
+    Il faut donc utiliser un raisonnement par hypothèse :
+    \begin{enumerate}
+        \item poser une hypothèse
+        \item raisonner comme si cette hypothèse était exacte
+        \item vérifier si le résultat obtenu est compatible avec l'hypothèse
+    \end{enumerate}
+
+    Voici donc la procédure à suivre :
+    \begin{enumerate}
+        \item pour chaque diode, il n'y a que deux hypothèses : soit bloquante soit passante
+        \item une fois l'état fixé par hypothèse, on impose la loi correspondante (l'égalité, 
+        donc soit $V_{AK} = 0.6V$ soit $I_A=0$). On peut remplacer la diode
+        dans le circuit par soit une source de tension (diode passante), soit
+        un circuit ouvert (diode bloquante) pour faciliter la résolution.
+        \item une fois le circuit résolu, il faut vérifier la compatibilité
+        du résultat obtenu avec l'hypothèse. En particulier, il faut vérifier si :
+        \begin{itemize}
+            \item $I_A >0$ si on a choisi l'hypothèse d'une diode passante
+            \item $V_{AK} < 0.6V$ si on a choisi l'hypothèse d'une diode bloquante
+        \end{itemize}
+    \end{enumerate}
+
+    Voici un exemple de ce raisonnement :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{fig/5_diodecircuitexemple.png}
+            \caption{Exemple de résolution d'un circuit à diodes}
+            \label{fig:5_diodecircuitexemple}
+        \end{center}
+    \end{figure}
+
+    Dans l'exemple ci-dessus, E est fixé. S'il ne l'est pas, on applique le 
+    même raisonnement mais on rajoute à notre réponse une condition (si E
+    n'est pas fixé, la condition sera par exemple $E > V_{TH}$ ou $E < V_{TH}$).\\
+
+    Une résolution graphique est aussi possible :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{fig/5_diodecircuitexemplegraphique.png}
+            \caption{Exemple de résolution graphique d'un circuit à diodes}
+            \label{fig:5_diodecircuitexemplegraphique}
+        \end{center}
+    \end{figure}
 
 
 \end{document}
