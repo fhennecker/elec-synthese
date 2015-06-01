@@ -473,4 +473,83 @@
     Dernière chose à retenir : pour amplifier un signal, un ampli-op seul, tel-quel
     est inutilisable car il sature très vite. Il faudra l'utiliser dans un montage.
 
+
+    \subsection{Deux montages amplificateurs}
+    \subsubsection{L'ampli non-inverseur (calcul classique)}
+
+    Voici le schéma d'un montage amplificateur non-inverseur : 
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/4_montampni.png}
+            \caption{Montage amplificateur non-inverseur}
+            \label{fig:4_montampni}
+        \end{center}
+    \end{figure}
+    Attention, nous parlerons maintenant du montage, y compris quand on parle de gain.
+    On voit aussi sur le montage que $R_2$ est en rétroaction.
+
+    \paragraph{Calcul du gain $A_{non_inv}$}
+    On peut noter $V_{out} = A.(V^+-V^-)$ et $V^+ = V_{in}$. Pour trouver $V^-$, 
+    on remarque que $R_1$ et $R_2$ forment un diviseur résistif. Donc, 
+    $V^- = \frac{R_1}{R_1+R_2}V_{out}$. (Cette relation n'est valable que
+    sous l'hypothèse de l'impédance d'entrée infinie!).\\
+
+    Avec ces 3 équations et l'hypothèse que A est très élevé, on peut arriver 
+    à $A_{non-inv} \approx 1 + \frac{R_2}{R_1}$.\\
+
+    Par exemple, pour amplifier 100 fois $V_{in}$, il suffit de prendre $R_1 = 1k\Omega$
+    et $R_1 = 99k\Omega$
+
+    \paragraph{Gain variable}
+    On peut remplacer $R_2$ par un potentiomètre, mais le gain sera toujours de
+    minimum 1.
+
+    \paragraph{Impédance d'entrée du montage}
+    On peut faire le raisonnement suivant :
+    \begin{enumerate}
+        \item $V_{in}$ est appliquée à l'entrée non-inverseuse de l'ampli-op
+        \item comme l'impédance d'entrée de l'ampli-op est infinie, aucun courant
+        ne peut rentrer par cette borne $\Rightarrow I_{in} = 0$
+        \item l'impédance d'entrée dun montage est donc elle-même infinie.
+    \end{enumerate}
+
+
+    \subsubsection{L'ampli inverseur (calcul classique)}
+    Son schéma est quasiment identique :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{fig/4_montampi.png}
+            \caption{Montage amplificateur inverseur}
+            \label{fig:4_montampi}
+        \end{center}
+    \end{figure}
+    On peut calculer son gain et obtenir $A_{inv} \approx - \frac{R_2}{R_1}$. On 
+    note qu'il est négatif et qu'on peut, lui, entièrement l'annuler.
+
+    \paragraph{Impédance}
+    Le courant $I_{in}$ n'est autre que le courant circulant dans $R_1$ et aussi
+    dans $R_2$ (puisque l'impédance d'entrée de l'ampli-op est infinie). L'impédance est :
+    $$ Z_{in} = \frac{V_{in}}{I_{in}}$$
+    On peut donc écrire que ce courant vaut : $I_{in} = \frac{V_{in} - V_{out}}{R_1+R_2} $.
+    Aussi, $V_{out} = A_{inv}.V_{in} = -\frac{R_2}{R_1}.V_{in} $.\\
+
+    Conclusion : l'impédance d'entrée du montage inverseur vaut $R_1$, ce qui est
+    très faible.
+
+    \subsubsection{Calcul rapide avec le principe du zéro virtuel}
+    On peut approximer que $V^+ = V^-$. Concernant le montage, on peut dire que
+    $V^- = \frac{R_1}{R_1+R_2}V_{out}$. Si on égalise ces deux équations, on trouve
+    immédiatement le gain du montage : 
+    $$ A_{non-inv} = \frac{V_{out}}{V_{in}} = 1 + \frac{R_2}{R_1} $$
+
+    \subsubsection{Analyse de la rétroaction}
+    En gros, dans le montage non-inverseur, quand on applique 10mV à $V^+$, 
+    $V_{out}$ ne montera pas directement à 30000 fois la valeur de $V_{in}$.
+    Cette valeur montera graduellement. Or, plus elle monte, plus la valeur 
+    sur $V^-$ monte. $V_d$ diminue donc, et $V_{out}$ ne doit plus monter
+    si haut. Il y a un moment où les deux valeurs s'équilibrent.\\
+
+    En fait, le fait que $R_2$ soit rétroactive permet que $V^-$ "poursuive" $V^+$.
+    C'est elle qui assure le zéro virtuel.
+
 \end{document}
