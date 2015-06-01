@@ -471,10 +471,172 @@ Bruno \bsc{Rocha Pereira} - Pierre \bsc{Gérard}}
             \end{figure}
             \begin{itemize}
                 \item $ \tau = \frac{L}{R} $
-                \item $ V_{L}(t) est un filtre passe-haut de e(t) $
-                \item $ V_{R}(t) est un filtre passe-bas de e(t) $
+                \item $ V_{L}(t) $ est un filtre passe-haut de $ e(t) $
+                \item $ V_{R}(t) $ est un filtre passe-bas de $ e(t) $
                 \item La fréquence et la pulsation de coupure sont les mêmes que RC
             \end{itemize}
+
+        \subsubsection{Analyse fréquentielle}
+            "Circuits linéaires en régime sinusoïdal"
+            \begin{itemize}
+                \item R, L, C constants => linéaires
+                \item ondes périodes => en régime
+                \item sinusoïdal => monochromatique (une seule fréquence)
+            \end{itemize}
+            On peut donc analyser ces circuits sur base de leur fréquence.
+            \paragraph{Valeur efficace}
+                $ X_{eff} = X_{rms} = \sqrt{\frac{1}{T}\int_{0}^{T}X^{2}(t)dt} $
+                Représente la puissance contenue dans le signal. Valeur du courant continu de même puissance.
+            \paragraph{Valeur efficace vraie}
+                Dans le cas d'une sinusoïde : $ X_{eff} = \frac{X}{\sqrt{2}} $
+            \paragraph{Convention}
+                $ 1V = 1V_{eff} $
+
+        \subsubsection{Phaseurs}
+            Les phaseurs sont un outil permettant
+            \begin{itemize}
+                \item signal temporel \textbf{variable} -> nombre complexe \textbf{constant}
+                \item equations différentielles réelles -> équations algébriques complexes
+                \item faire abstraction de la variation périodique d'un ensemble de signaux
+            \end{itemize}
+            Tous les signaux sinusoïdaux sont de la forme : \\
+            $ X(t) = A_{X}\sqrt{2}cos(\omega t + \varphi_{X}) $ où \\
+            $ A_{X} $ est l'amplitude \\
+            $ \varphi_{X} $ est la phase \\
+            $ \omega $ est la pulsation \\
+            \paragraph{Phaseur} $ \underline{X} = A_{X}e^{j \varphi X} $
+            \paragraph{Conversion} $ X(t) = \sqrt(2)\Re e\{\underline{X}e^{j \varphi X}\} $
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_phaseur.png}
+                    \caption{Représentation du phaseur et de la conversion en signal temporel}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
+        \subsubsection{Impédance}
+            Généralisation de la résistance, capacité et inductance sous forme d'un nombre complexe en utilisant les phaseurs de manière à pouvoir résoudre les circuits plus facilement.
+            Fonctionne si V et I sont déphasés.
+
+            
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_impedance_L1.png}
+                    \caption{Impédance d'une inductante}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_impedance_L2.png}
+                    \caption{Impédance d'une inductante}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_impedance_C1.png}
+                    \caption{Impédance d'une capacité}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_impedance_C2.png}
+                    \caption{Impédance d'une capacité}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_impedance_R.png}
+                    \caption{Impédance d'une résistance}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_calcul_phaseur1.png}
+                    \caption{Les calculs restent applicables avec des phaseurs}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_calcul_phaseur2.png}
+                    \caption{Résultat des calculs}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
+    \subsection{Réponse en fréquence}
+        La \textbf{réponse en fréquence} (ou \textbf{transmittance isochrone}) est le rapport du signal de sortie sur le signal d'entrée en phaseurs.
+        \begin{itemize}
+            \item Représente la transformation réalisée par le circuit sur le signal d'entrée
+            \item Généralisation du gain
+            \item Sous hypothèse de circuits linéaires en régime sinusoïdal
+            \item Gain et déphasage introduits par le circuit en fonction de la fréquence : $ H(j\omega) = A(\omega)e^{j\varphi(\omega)} $
+            \item Par exemple sur un ampli audio, l'équalizer montre la réponse en fréquence
+        \end{itemize}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=0.7\textwidth]{fig/2_reponse.png}
+                \caption{Réponse en fréquence}
+                \label{fig:2_superposition}
+            \end{center}
+        \end{figure}
+        \subsubsection{Courbes de Bode}
+            \begin{itemize}
+                \item Représente graphiquement la réponse en fréquence
+                \item Gain : graphe bilogarithmique : $ log[A(\omega)] = fct(log \omega) $
+                \item Phase : graphe semi-logarithmique : $ \varphi(\omega) = fct(log \omega) $
+                \item Deux problématiques : analyse (représenter les courbes de Bode du circuit) et synthèse (trouver le circuit à partir des courbes de Bode)
+            \end{itemize}
+            Définitions
+            \begin{itemize}
+                \item décade = x10
+                \item octave = x2
+                \item décibels : unité adimensionnelle pour exprimer un rapport
+                \item rapport de tension ou courant : $ X[db] = 20logX $
+                \item rapport de tension ou courant : $ X[db] = 10logX $
+            \end{itemize}
+            Exemple
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_courbesbode.png}
+                    \caption{Courbes de Bode}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            Réponses en fréquence du RC et du RL
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse2.png}
+                    \caption{Réponses en fréquence du RC et du RL}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            Exemple : circuit RC
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse_RC1.png}
+                    \caption{Courbes de Bode d'un filtre passe-haut}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=0.7\textwidth]{fig/2_reponse_RC2.png}
+                    \caption{Courbes de Bode d'un filtre passe-bas}
+                    \label{fig:2_superposition}
+                \end{center}
+            \end{figure}
+
+
 
 
 \section{Amplificateurs opérationnels (Chapitre 4)}
