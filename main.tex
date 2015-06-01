@@ -17,7 +17,8 @@
     ELEC-H-201 - Electronique\\
     \small Synthèse 2014-2015
 }
-\author{Florentin \bsc{Hennecker} Pierre \bsc{Gérard}}
+\author{Florentin \bsc{Hennecker} - Antoine \bsc{Carpentier}\\
+Bruno \bsc{Rocha Pereira} - Pierre \bsc{Gérard}}
 \date{}
 
 \begin{document}
@@ -1053,4 +1054,73 @@
 
     Il faut donc maintenant faire attention dans nos montages à ce que les valeurs
     les plus négatives ne dépassent pas $V_{BR}$!
+
+    \subsection{Autres types de diodes}
+    \subsubsection{Diode Zener}
+    Cette diode supporte l'avalanche. Cela présente un avantage puisqu'une
+    diode en avalanche se comporte comme une source de tension presque parfaite.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.1\textwidth]{fig/5_diodezener.png}
+            \caption{Symbole de la diode Zener}
+            \label{fig:5_diodezener}
+        \end{center}
+    \end{figure}
+    De plus, la valeur de la tension d'avalanche $V_{BR}$ peut être choisie dans une
+    gamme assez large.\\
+
+    En fait, la diode zener s'emploie à l'envers :
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_zenermontage.png}
+            \caption{Montage avec la diode Zener}
+            \label{fig:5_zenermontage}
+        \end{center}
+    \end{figure}
+    Sur ce montage, la ddp sur la résistance ne peut dépasser |$V_{BR}$|. Il peut
+    être exploité de deux façons :
+    \begin{itemize}
+        \item soit la diode est la plupart du temps coupée et elle entre en avalanche
+        occasionnellement, lors de pics de la tension E
+        \item soit elle est tout le temps en avalanche, elle est alors utilisée
+        pour réguler la tension $V_L$ à la valeur $V_{BR}$.
+    \end{itemize}
+    NB. on fait donc passer un courant inverse dans la diode zener.
+
+    \subsubsection{LED}
+    La Light Emitting Diode émet de la lumière lorsqu'elle est passante.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.05\textwidth]{fig/5_led.png}
+            \caption{Symbole de la LED}
+            \label{fig:5_led}
+        \end{center}
+    \end{figure}
+
+    \subsubsection{Photodiode}
+    La photodiode est passante lorsqu'elle reçoit de la lumière.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.05\textwidth]{fig/5_photodiode.png}
+            \caption{Symbole de la photodiode}
+            \label{fig:5_photodiode}
+        \end{center}
+    \end{figure}
+
+    \subsubsection{Octocoupleur}
+    L'octocoupleur permet de transférer un signal électrique entre deux parties
+    d'un montage isolées électriquement l'une de l'autre. (exemple : si on 
+    applique des électrodes sur un patient, elles doivent être très sévèrement
+    isolées pour éviter tout risque de brûlure ou d'électrocution).\\
+
+    C'est en fait une LED suivie immédiatement d'un phototransistor.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/5_octocoupleur.png}
+            \caption{Un montage avec un octocoupleur}
+            \label{fig:5_octocoupleur}
+        \end{center}
+    \end{figure}
+
 \end{document}
