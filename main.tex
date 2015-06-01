@@ -736,4 +736,37 @@
         \item si $V_{AK} < 0$, la diode est dite en polarisation inverse
     \end{itemize}
 
+    \paragraph{Rendre une diode bloquante}
+    Il ne faut ... rien faire. On peut lui appliquer une tension jusqu'à $V_{TH}$.
+
+    \paragraph{Rendre une diode passante}
+    Il ne faut \textbf{jamais} lui appliquer directement une f.e.m.! Sinon, 
+    le courant est indéterminé (fig \ref{fig:5_diodefem}), théoriquement infini.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{fig/5_diodefem.png}
+            \caption{\`A ne jamais faire}
+            \label{fig:5_diodefem}
+        \end{center}
+    \end{figure}
+
+    Il faut ajouter une résistance de limitation de courant :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{fig/5_resistancelimitation.png}
+            \caption{Résistance de limitation de courant}
+            \label{fig:5_resistancelimitation}
+        \end{center}
+    \end{figure}
+    On retombe alors sur le schéma simple redresseur, avec :
+    \begin{align*}
+        \begin{cases}
+            V_{AK} &= V_{TH}\\
+            I &=\frac{E-V_{TH}}{R}
+        \end{cases}
+    \end{align*}
+
+    On peut aussi, plus simplement, utiliser une source de courant. Dans ce cas, 
+    la diode fixe la ddp et la source fixe l'intensité du courant.
+
 \end{document}
