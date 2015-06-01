@@ -359,4 +359,118 @@
     existant entre les noeuds utilisés pour faire la mesure.
 
 
+    \subsection{Résoudre un schéma}
+    \subsubsection{\'Etapes canoniques}
+    \begin{enumerate}
+        \setcounter{enumi}{-1}
+        \item (boucler les boucles)
+        \item définir les courants
+        \item définir les tensions (ddps)
+        \item écrire les équations de noeud (courants)
+        \item écrire les équations de maille (tensions)
+        \item écrire les lois des dipôles
+        \item résoudre le système 3-4-5
+        \item (parfaire la finition)
+    \end{enumerate}
+
+    \subsubsection{Théorème de superposition}
+    \textbf{Valable uniquement pour les circuits linéaires!}\\
+
+    Il faut supprimer toutes les sources sauf une. On remplace :
+    \begin{itemize}
+        \item les sources de tension par un court-circuit
+        \item les sources de courant par un circuit ouvert
+    \end{itemize}
+    On peut ensuite sommer les contributions individuelles de chaque source.
+
+    \paragraph{Exemple} Voici un exemple :
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{fig/2_superposition.png}
+            \caption{Application du principe de superposition}
+            \label{fig:2_superposition}
+        \end{center}
+    \end{figure}
+
+    \subsection{Composants réactifs}
+
+    gné?
+
+
+\section{L'amplificateur opérationnel (chapitre 4)}
+    Il existe de nombreuses raisons d'amplifier un signal. En voici trois : 
+    \begin{itemize}
+        \item signaux très faibles
+        \item réglage de niveau
+        \item amplification en amont d'un CAN
+    \end{itemize}
+
+    \subsection{Propriétés de base}
+    \subsubsection{Qu'est-ce qu'un ampli-op?}
+    Ceci :
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/4_ampliop.png}
+            \caption{Schéma d'un ampli-op}
+            \label{fig:4_ampliop}
+        \end{center}
+    \end{figure}
+    Chacune des entrées reçoit un signal de tension mesuré par rapport à la masse.
+    La tension de sortie est souvent également mesurée par rapport à la même masse.\\
+
+    La fonction d'un ampli-op est d'amplifier la \textit{différence} des tensions
+    présentes à ses bornes d'entrée. Cette différence $V_d = V^+ - V^-$ est appelée 
+    tension d'entrée différentielle.\\
+
+    On note $A$ le gain d'un ampli-op (dans la fonction $V_{out} = A . V_d)$). 
+    Il vaut typiquement 30000 à 100000. Effectivement, sa tension d'entrée est 
+    nettement inférieure à 1mV mais le signal de sortie est de l'ordre du volt.\\
+
+    En plus des bornes d'entrée et de sortie, un ampli-op possède des bornes d'alimentation.
+    On y applique des tensions externes souvent symétriques (de l'ordre de +12V/-12V, +15V/-15V)
+
+    \subsubsection{Impédances d'entrée et de sortie}
+    Particularité : l'impédance d'entrée $Z_{in}$ d'un ampli-op est différentielle.
+    Elle est très élevée, on fait même souvent l'approximation qu'elle est infinie.\\
+
+    Inversement, l'impédance de sortie de l'ampli-op est très faible. On fait
+    souvent l'approximation qu'elle est nulle.\\
+
+    Pour être complets, il faut encore identifier la source commandée $E_{out}$
+    de l'équivalent de Thévenin. On néglige la résistance de sortie, donc 
+    $E_{out} = A.V_{in} = A.V_d$.
+
+    \subsubsection{Caractéristique de transfert et principe du zéro virtuel}
+    La \textit{caractéristique de transfert} d'un ampli-op est le rapport entre
+    sa tension d'entrée et tension de sortie (fig) 
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{fig/4_cartransfert.png}
+            \caption{Caractéristique de transfert d'un ampli-op}
+            \label{fig:4_cartransfert}
+        \end{center}
+    \end{figure}
+
+    On y distingue trois zones
+    \begin{itemize}
+        \item la zone linéaire qui correspond à la loi fondamentale, très étroite
+        (car le gain est très élevé)
+        \item les zones de saturation là où la sortie atteint les tensions d'alimentation
+    \end{itemize}
+
+    \paragraph{Principe du zéro virtuel} Tant qu'un ampli-op ne sature pas, sa 
+    tension différentielle est virtuellement nulle.\\
+
+    On peut négliger $V_d$ \textbf{tant qu'on est dans la zone linéaire}. Cela
+    revient à approximer $V^+ = V^-$.\\
+
+    Le seul problème est alors qu'on approxime $V_d$ à zéro précisément au seul
+    endroit où on a besoin de sa valeur. Le zéro virtuel consiste en fait à faire
+    deux approximations simultanées, l'autre étant que A est infini.\\
+
+    Dernière chose à retenir : pour amplifier un signal, un ampli-op seul, tel-quel
+    est inutilisable car il sature très vite. Il faudra l'utiliser dans un montage.
+
 \end{document}
