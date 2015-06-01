@@ -600,6 +600,43 @@
             \label{fig:5_diodecar}
         \end{center}
     \end{figure}
+    La valeur $V_{TH}$ est la tension de seuil de la diode. Dans la plupart des cas,
+    on peut considérer (pour les diodes PN) qu'elle vaut 0.6V.
+
+    \paragraph{Diode passante}
+    Lorsque la diode est passante, on peut dire que :
+    \begin{align*}
+        \begin{cases}
+            V_{AK} &= V_{TH} = 0.6V\\
+            I_A &> 0
+        \end{cases}
+    \end{align*}
+
+    On se rend compte qu'une diode \textbf{passante} peut être assimilée à une
+    source de tension idéale de valeur $V_{TH}$. Effectivement:
+    \begin{itemize}
+        \item sa caractéristique est une droite verticale
+        \item elle impose une ddp à ses bornes mais pas le courant
+    \end{itemize}
+    La seule différence et qu'une source de tension admet un courant négatif, pas la diode.\\
+
+    On peut même aller plus loin si toutes les tensions présentes dans le circuit
+    sont nettement supérieures à 0.6V et considérer la diode comme un court-circuit.
+
+    \paragraph{Diode bloquante}
+    Quand elle est bloquante, on peut dire d'une diode que :
+    \begin{align*}
+        \begin{cases}
+            V_{AK} &< V_{TH} = 0.6V\\
+            I_A &= 0
+        \end{cases}
+    \end{align*}
+    Une diode bloquante peut être assimilée à un circuit ouvert.
+
+    \paragraph{Non-linéarité} La diode est un composant \textbf{non-linéaire}.
+    On ne peut donc \textbf{pas appliquer le principe de superposition!}
+
+    \subsection{Résoudre un circuit à diode}
 
 
 \end{document}
