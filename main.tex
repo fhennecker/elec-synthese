@@ -778,6 +778,11 @@ Bruno \bsc{Rocha Pereira} - Pierre \bsc{Gérard}}
         \item l'impédance d'entrée dun montage est donc elle-même infinie.
     \end{enumerate}
 
+    \paragraph{Applications}
+    \begin{itemize}
+        \item Amplification
+    \end{itemize}
+
 
     \subsubsection{L'ampli inverseur (calcul classique)}
     Son schéma est quasiment identique :
@@ -816,6 +821,47 @@ Bruno \bsc{Rocha Pereira} - Pierre \bsc{Gérard}}
 
     En fait, le fait que $R_2$ soit rétroactive permet que $V^-$ "poursuive" $V^+$.
     C'est elle qui assure le zéro virtuel.
+
+    \paragraph{Applications}
+    \begin{itemize}
+        \item Amplification
+        \item Convertisseur tension/courant
+    \end{itemize}
+
+
+    \subsection{Imperfections}
+    \subsubsection{Statiques: offset}
+    De par les imperfections de fabrication, il se peut qu'aux bornes de l'ampliop
+    se présente une différence de potentiel entre $V^+$ et $V^-$, et que cette
+    différence soit assez grande pour faire saturer l'AOP (quelques millivolts suffisent).
+    L'offset permet d'ajouter une différence de potentiel en entrée pour compenser les
+    imperfections, et revenir à un système stable.
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{fig/4_offset.png}
+            \includegraphics[width=0.2\textwidth]{fig/4_offsetgraph.png}
+            \caption{Imperfections statiques: offset}
+            \label{fig:4_offset}
+        \end{center}
+    \end{figure}
+
+    \subsubsection{Produit gain.bande passante}
+    Les imperfections de fabrication peuvent aussi créer de petites capacités
+    et inductances durant la gravure du silicium. L'ampliop a tendance à se comporter
+    comme un filtre passe bas. La rétroaction augmente la bande passante. En fait, 
+    le produit gain\footnote{Le gain réel du montage, pas celui de l'ampliop} bande passante est une constante pour un ampliop.
+    On peut par exemple avoir un ampliop qui est capable de fournir un gain de 50, 
+    avec une bande passante de 100kHz, ou un gain de 5 et une bande passante de 1MHz.
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=0.2\textwidth]{fig/4_gainbw.png}
+            \includegraphics[width=0.3\textwidth]{fig/4_gainbwgraph.png}
+            \caption{Imperfections dynamiques: effets de la limite gain bande passante}
+            \label{fig:4_gainbw}
+        \end{center}
+    \end{figure}
 
 \section{Les diodes (chapitre 5)}
     
